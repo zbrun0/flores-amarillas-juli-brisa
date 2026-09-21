@@ -17,7 +17,7 @@
     }
 
     :root {
-      --dark-color: #000;
+      --dark-color: #000000;
       --gold-primary: #ffd700;
       --gold-soft: #ffe875;
     }
@@ -42,14 +42,9 @@
       transform: translateX(-50%);
       width: 100%;
       height: 100%;
-      filter: blur(0.1vmin);
-      background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), 
-      radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.15)), 
-      repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, 
-      transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, 
-      transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, 
-      rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(21, 255, 0), 
-      rgb(240, 240, 240));
+      background-color: #000000;
+      background-image: radial-gradient(ellipse at top, #080808 0%, #000000 70%), 
+      radial-gradient(ellipse at bottom, #000000, rgba(145, 233, 255, 0.08));
       z-index: 1;
     }
 
@@ -64,7 +59,7 @@
     }
 
     /* ==========================================================
-       START OVERLAY (Soluciona el bloqueo de autoplay del navegador)
+       START OVERLAY (Fondo 100% negro sólido sin transparencias)
        ========================================================== */
     #startOverlay {
       position: fixed;
@@ -72,7 +67,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: radial-gradient(circle at center, rgba(30, 20, 5, 0.95) 0%, rgba(5, 5, 0, 0.98) 100%);
+      background-color: #000000;
       z-index: 500;
       display: flex;
       flex-direction: column;
@@ -80,7 +75,7 @@
       justify-content: center;
       padding: 20px;
       cursor: pointer;
-      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s ease;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
       text-align: center;
     }
 
@@ -91,8 +86,8 @@
     }
 
     .start-badge {
-      background: rgba(255, 215, 0, 0.18);
-      border: 1px solid rgba(255, 215, 0, 0.4);
+      background: #1a1708;
+      border: 1px solid #cca03c;
       color: #ffe082;
       padding: 8px 22px;
       border-radius: 30px;
@@ -101,51 +96,46 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 20px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
     }
 
     .start-title {
       font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 800;
       color: #fff9e6;
-      text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
       margin-bottom: 10px;
       line-height: 1.2;
     }
 
     .start-title span {
-      background: linear-gradient(45deg, #ffe066, #ffb300, #fff2a3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffd700;
     }
 
     .start-subtitle {
-      color: #e6dcbe;
+      color: #b0a992;
       font-size: 1.05rem;
       margin-bottom: 35px;
       max-width: 450px;
     }
 
     .start-pulse-btn {
-      background: linear-gradient(135deg, #ffd700 0%, #ff9800 100%);
-      color: #382000;
+      background: #ffd700;
+      color: #000000;
       font-family: 'Poppins', sans-serif;
       font-weight: 800;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       border: none;
-      padding: 16px 36px;
+      padding: 15px 36px;
       border-radius: 40px;
-      box-shadow: 0 0 35px rgba(255, 215, 0, 0.7), 0 6px 20px rgba(0,0,0,0.5);
-      animation: pulseBtn 1.8s infinite alternate ease-in-out;
       display: flex;
       align-items: center;
       gap: 12px;
       cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
-    @keyframes pulseBtn {
-      0% { transform: scale(0.97); box-shadow: 0 0 25px rgba(255, 215, 0, 0.5); }
-      100% { transform: scale(1.05); box-shadow: 0 0 45px rgba(255, 215, 0, 0.9); }
+    .start-pulse-btn:hover {
+      transform: scale(1.04);
+      background: #ffe066;
     }
 
     /* ==========================================================
@@ -181,34 +171,30 @@
       display: inline-block;
       padding: 6px 18px;
       border-radius: 30px;
-      background: rgba(255, 215, 0, 0.15);
-      border: 1px solid rgba(255, 215, 0, 0.4);
+      background: #1a1708;
+      border: 1px solid #cca03c;
       color: var(--gold-soft);
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 12px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
     }
 
     .main-title h1 {
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 800;
       color: #fffdf5;
-      text-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
       line-height: 1.2;
     }
 
     .main-title h1 span {
-      background: linear-gradient(45deg, #ffe066, #ffb300, #fff2a3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffd700;
     }
 
     .main-title p {
       font-size: 1rem;
-      color: #dfd5ba;
+      color: #b0a992;
       margin-top: 8px;
       font-weight: 400;
     }
@@ -228,7 +214,7 @@
       flex-direction: column;
       align-items: center;
       cursor: pointer;
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.3s ease;
     }
 
     .envelope-wrapper:hover {
@@ -237,22 +223,21 @@
 
     .envelope-tag {
       margin-bottom: 15px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 215, 0, 0.4);
+      background: #141208;
+      border: 1px solid #cca03c;
       padding: 8px 26px;
       border-radius: 20px;
       font-family: 'Caveat', cursive;
       font-size: 1.8rem;
       color: var(--gold-soft);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       letter-spacing: 1px;
       transition: all 0.3s ease;
     }
 
     .envelope-wrapper:hover .envelope-tag {
-      background: rgba(255, 215, 0, 0.25);
+      background: #2a2205;
       color: #ffffff;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      border-color: #ffd700;
     }
 
     .envelope-3d {
@@ -261,7 +246,7 @@
       height: 205px;
       perspective: 1000px;
       border-radius: 10px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
       background: linear-gradient(135deg, #ebd499 0%, #dbb86f 100%);
     }
 
@@ -279,8 +264,7 @@
       align-items: center;
       justify-content: flex-start;
       padding-top: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      border: 1px dashed #d4af37;
+      border: 1px dashed #cca03c;
       transition: transform 0.4s ease;
     }
 
@@ -298,7 +282,7 @@
 
     .peek-sub {
       font-size: 0.8rem;
-      color: #d88900;
+      color: #b87500;
       font-weight: 600;
       margin-top: 2px;
     }
@@ -351,7 +335,6 @@
       transform-origin: top center;
       transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 4;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.35));
     }
 
     .envelope-wrapper:hover .envelope-top-flap {
@@ -365,16 +348,16 @@
       transform: translateX(-50%);
       width: 48px;
       height: 48px;
-      background: radial-gradient(circle, #ffca28, #e65100);
+      background: #e65100;
       border-radius: 50%;
       z-index: 5;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.4), 0 0 15px rgba(255, 193, 7, 0.7);
       border: 2px solid #ffd54f;
       font-size: 1.3rem;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     .envelope-wrapper:hover .envelope-seal {
@@ -389,18 +372,16 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 215, 0, 0.15);
+      background: #141208;
       padding: 6px 18px;
       border-radius: 20px;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      border: 1px solid #cca03c;
       transition: all 0.3s ease;
     }
 
     .envelope-wrapper:hover .envelope-click-hint {
       background: #ffd700;
-      color: #3b2000;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+      color: #000;
     }
 
     /* ==========================================================
@@ -431,8 +412,8 @@
       top: 25px;
       left: 25px;
       z-index: 300;
-      background: rgba(18, 14, 5, 0.85);
-      border: 1px solid rgba(255, 215, 0, 0.5);
+      background: #141208;
+      border: 1px solid #cca03c;
       color: var(--gold-soft);
       padding: 10px 22px;
       border-radius: 30px;
@@ -442,15 +423,13 @@
       gap: 8px;
       font-size: 0.92rem;
       font-weight: 700;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
 
     .back-btn:hover {
-      background: rgba(255, 215, 0, 0.3);
-      transform: scale(1.05);
-      color: #fff;
+      background: #ffd700;
+      color: #000;
+      transform: scale(1.04);
     }
 
     .message {
@@ -459,12 +438,12 @@
       font-family: "Poppins", sans-serif;
       font-size: clamp(20px, 4vw, 34px);
       font-weight: 800;
-      color: #2e1c00;
+      color: #000000;
       padding: 12px 32px;
       border-radius: 14px;
       position: absolute;
       z-index: 200;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.7), 0 0 30px rgba(252, 231, 0, 0.6);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.8);
       opacity: 0;
       animation: fadeInMsg 1s forwards;
       animation-delay: 1.5s;
@@ -532,18 +511,6 @@
     .flower__leafs--2 { animation-delay: 1.4s; }
     .flower__leafs--3 { animation-delay: 1.7s; }
 
-    .flower__leafs::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      transform: translate(-50%, -100%);
-      width: 8vmin;
-      height: 8vmin;
-      background-color: #1aaa15;
-      filter: blur(10vmin);
-    }
-
     .flower__line {
       height: 55vmin;
       width: 1.5vmin;
@@ -587,7 +554,6 @@
       height: 1vmin;
       background-color: rgb(255, 251, 0);
       border-radius: 50%;
-      filter: blur(0.2vmin);
       animation: light-ans 4s linear infinite backwards;
     }
     .flower__light:nth-child(odd) { background-color: #ffd700; }
@@ -718,7 +684,7 @@
       transform: rotateY(-180deg);
       animation: flower-g-right-ans--2 3s linear infinite;
     }
-    .flower__g-right--2 .leaf { height: 75vmin; filter: blur(0.3vmin); opacity: 0.8; }
+    .flower__g-right--2 .leaf { height: 75vmin; opacity: 0.8; }
 
     .flower__g-front {
       position: absolute;
@@ -767,7 +733,6 @@
       width: 10vmin;
       height: 10vmin;
       border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
-      box-shadow: inset 0 2px 1vmin hsla(184deg, 97%, 58%, 0.2);
       background-image: linear-gradient(to bottom left, transparent, var(--dark-color)), 
       linear-gradient(to bottom right, #00b815 50%, transparent 50%, transparent);
       mask-image: linear-gradient(to bottom right, #00b815 50%, transparent 50%, transparent);
@@ -797,7 +762,6 @@
       width: 10vmin;
       height: 10vmin;
       border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
-      box-shadow: inset 0 2px 1vmin hsla(184deg, 97%, 58%, 0.2);
       background-image: linear-gradient(to bottom left, transparent, var(--dark-color) 98%), 
       linear-gradient(to bottom right, #00b815 45%, transparent 50%, transparent);
       mask-image: linear-gradient(135deg, #00b815 40%, transparent 50%, transparent);
@@ -823,8 +787,8 @@
     .long-g--4 { left: 25vmin; bottom: -3vmin; transform-origin: center; transform: scale(0.6) rotateX(60deg); }
     .long-g--4 .leaf { mask-image: linear-gradient(to top, transparent 50%, #00b815 80%) !important; }
     .long-g--5 { left: 42vmin; bottom: 0vmin; transform: scale(0.8) rotate(2deg); }
-    .long-g--6 { left: 0vmin; bottom: -20vmin; z-index: 100; filter: blur(0.3vmin); transform: scale(0.8) rotate(2deg); }
-    .long-g--7 { left: 35vmin; bottom: 20vmin; z-index: -1; filter: blur(0.3vmin); transform: scale(0.6) rotate(2deg); opacity: 0.7; }
+    .long-g--6 { left: 0vmin; bottom: -20vmin; z-index: 100; transform: scale(0.8) rotate(2deg); }
+    .long-g--7 { left: 35vmin; bottom: 20vmin; z-index: -1; transform: scale(0.6) rotate(2deg); opacity: 0.7; }
 
     .long-g .leaf {
       --w: 15vmin;
@@ -848,7 +812,7 @@
 
     /* ==========================================================
        DISTINCT FLOWER DESIGNS (JULI VS BRISA)
-       ========================================================== */
+       ========================================================= */
     
     /* --- 1. JULI: GIRASOLES RADIANTES (Sunflowers) --- */
     #sceneJuli .flower__leaf {
@@ -862,7 +826,6 @@
       background-image: linear-gradient(to top, #ff9100, #ffea00 85%);
       transform-origin: bottom center;
       opacity: 0.95;
-      box-shadow: inset 0 0 2vmin rgba(255, 235, 59, 0.8), 0 0 15px rgba(255, 179, 0, 0.5);
     }
     #sceneJuli .flower__leaf--1 { transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg); }
     #sceneJuli .flower__leaf--2 { transform: translate(-50%, -4%) rotateX(40deg); }
@@ -885,7 +848,6 @@
       height: 5vmin;
       border-radius: 50%;
       background-color: #3e2723;
-      box-shadow: 0 0 10px rgba(0,0,0,0.8);
     }
     #sceneJuli .flower__white-circle::after {
       content: "";
@@ -897,7 +859,6 @@
       height: 75%;
       border-radius: inherit;
       background-image: repeating-radial-gradient(circle, #5d4037 0px, #3e2723 3px, #271406 6px);
-      box-shadow: inset 0 0 4px #ffab00;
     }
     #sceneJuli .flower--1 { transform: scale(1.12); }
     #sceneJuli .flower--2 { transform: rotate(22deg) scale(1.02); }
@@ -915,7 +876,6 @@
       background-image: linear-gradient(to top, #fff176 10%, #ffff8d 60%, #ffffff 100%);
       transform-origin: bottom center;
       opacity: 0.92;
-      box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.9), 0 0 18px rgba(255, 253, 231, 0.6);
     }
     #sceneBrisa .flower__leaf--1 { transform: translate(-25%, 0%) rotateY(55deg) rotateX(-35deg); }
     #sceneBrisa .flower__leaf--2 { transform: translate(-50%, -8%) rotateX(25deg); }
@@ -938,7 +898,6 @@
       height: 3.5vmin;
       border-radius: 50%;
       background-color: #ffd600;
-      box-shadow: 0 0 12px rgba(255, 214, 0, 0.8);
     }
     #sceneBrisa .flower__white-circle::after {
       content: "";
@@ -988,9 +947,9 @@
     @keyframes light-ans {
       0% { opacity: 0; transform: translateY(0vmin); }
       25% { opacity: 1; transform: translateY(-5vmin) translateX(-2vmin); }
-      50% { opacity: 1; transform: translateY(-15vmin) translateX(2vmin); filter: blur(0.2vmin); }
-      75% { transform: translateY(-20vmin) translateX(-2vmin); filter: blur(0.2vmin); }
-      100% { transform: translateY(-30vmin); opacity: 0; filter: blur(1vmin); }
+      50% { opacity: 1; transform: translateY(-15vmin) translateX(2vmin); }
+      75% { transform: translateY(-20vmin) translateX(-2vmin); }
+      100% { transform: translateY(-30vmin); opacity: 0; }
     }
     @keyframes moving-flower-1 {
       0%, 100% { transform: rotate(2deg); }
@@ -1105,12 +1064,12 @@
   </audio>
 
   <!-- ==========================================================
-       START OVERLAY: Toca para entrar (Desbloquea el audio en todos los navegadores)
+       START OVERLAY: Fondo 100% negro sólido
        ========================================================== -->
   <div id="startOverlay" onclick="startExperience()">
     <div class="start-badge">🌻 21 de Septiembre 💛</div>
     <h1 class="start-title">Para <span>Juli & Brisa</span></h1>
-    <p class="start-subtitle">Toca la pantalla para abrir la sorpresa y escuchar su canción favorita</p>
+    <p class="start-subtitle">Toca la pantalla para abrir la sorpresa</p>
     <button class="start-pulse-btn">
       <span>Tocar para entrar ✨</span>
     </button>
@@ -1508,7 +1467,7 @@
 
   <script>
     /* ==========================================================
-       AUDIO & START CONTROLLER (100% Guaranteed playback)
+       AUDIO & START CONTROLLER
        ========================================================== */
     const bgAudio = document.getElementById('bgAudio');
     let audioStarted = false;
@@ -1519,7 +1478,7 @@
         bgAudio.play().then(() => {
           audioStarted = true;
         }).catch(e => {
-          console.log("Waiting for user tap...");
+          console.log("Esperando toque del usuario");
         });
       }
     }
@@ -1601,13 +1560,13 @@
       reset(initial = false) {
         this.x = Math.random() * width;
         this.y = initial ? Math.random() * height : -20;
-        this.size = Math.random() * 9 + 5;
-        this.speedY = Math.random() * 1.3 + 0.7;
-        this.speedX = Math.sin(Math.random() * 6) * 1.1;
+        this.size = Math.random() * 8 + 4;
+        this.speedY = Math.random() * 1.2 + 0.6;
+        this.speedX = Math.sin(Math.random() * 6) * 1.0;
         this.angle = Math.random() * Math.PI * 2;
         this.rotSpeed = (Math.random() - 0.5) * 0.04;
         this.color = Math.random() > 0.5 ? '#ffd700' : '#fff176';
-        this.opacity = Math.random() * 0.5 + 0.25;
+        this.opacity = Math.random() * 0.4 + 0.2;
       }
 
       update() {
@@ -1635,7 +1594,7 @@
       }
     }
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 35; i++) {
       particles.push(new PetalParticle());
     }
 
