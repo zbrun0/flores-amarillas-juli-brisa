@@ -1068,9 +1068,9 @@
     }
 
     /* ==========================================================
-       RESPONSIVE MOBILE RULES (Habilitar scroll vertical fluido)
+       RESPONSIVE MOBILE RULES (Flores grandes que abarcan la pantalla)
        ========================================================== */
-    @media (max-width: 650px) {
+    @media (max-width: 768px) {
       .envelopes-screen {
         padding: 45px 15px 65px 15px;
       }
@@ -1111,17 +1111,28 @@
         padding: 6px 20px;
         margin-bottom: 12px;
       }
+      
+      /* Flores en móvil: Gran tamaño para ocupar casi toda la pantalla vertical */
       .flowers {
-        transform: scale(0.72);
-        bottom: 4vmin;
+        transform: scale(1.45) translateY(-3vh);
+        transform-origin: bottom center;
+        bottom: 1vh;
       }
+      
+      #sceneBrisa .flowers {
+        transform: scale(1.42) translateY(-3vh) rotate(-2deg);
+        transform-origin: bottom center;
+      }
+
       .message {
-        bottom: 24px;
-        font-size: 1.15rem;
-        padding: 10px 20px;
-        width: 90%;
-        max-width: 340px;
+        bottom: 20px;
+        font-size: 1.1rem;
+        padding: 10px 18px;
+        width: 92%;
+        max-width: 360px;
+        border-radius: 12px;
       }
+
       .back-btn {
         top: 18px;
         left: 18px;
@@ -1130,15 +1141,15 @@
       }
     }
 
-    @media (max-height: 700px) {
+    @media (max-width: 400px) {
       .flowers {
-        transform: scale(0.65);
-        bottom: 2vmin;
+        transform: scale(1.38) translateY(-2vh);
       }
-      .message {
-        bottom: 18px;
-        font-size: 1.05rem;
-        padding: 8px 16px;
+      #sceneBrisa .flowers {
+        transform: scale(1.35) translateY(-2vh) rotate(-2deg);
+      }
+      .main-title h1 {
+        font-size: 1.55rem;
       }
     }
 
