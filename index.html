@@ -22,16 +22,26 @@
       --gold-soft: #ffe875;
     }
 
+    html {
+      overflow-x: hidden;
+      overflow-y: auto;
+      min-height: 100%;
+    }
+
     body {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       min-height: 100vh;
+      min-height: 100dvh;
       background-color: var(--dark-color);
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       perspective: 1000px;
       font-family: 'Poppins', 'Montserrat', sans-serif;
       color: #fff;
+      -webkit-overflow-scrolling: touch;
     }
 
     /* Sky background */
@@ -149,8 +159,10 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      min-height: 100dvh;
       width: 100%;
-      padding: 20px;
+      padding: 40px 20px 60px 20px;
+      margin: auto 0;
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
@@ -1054,6 +1066,82 @@
     @keyframes flower__g-fr-leaft-ans-8 {
       0% { transform-origin: right; transform: rotate(15deg) rotateY(-180deg) scale(0); }
     }
+
+    /* ==========================================================
+       RESPONSIVE MOBILE RULES (Habilitar scroll vertical fluido)
+       ========================================================== */
+    @media (max-width: 650px) {
+      .envelopes-screen {
+        padding: 45px 15px 65px 15px;
+      }
+      .envelopes-container {
+        gap: 35px;
+        width: 100%;
+      }
+      .main-title {
+        margin-bottom: 25px;
+      }
+      .main-title h1 {
+        font-size: 1.75rem;
+      }
+      .envelope-3d {
+        width: 280px;
+        height: 185px;
+      }
+      .envelope-pocket-left {
+        border-width: 92px 0 92px 140px;
+      }
+      .envelope-pocket-right {
+        border-width: 92px 140px 92px 0;
+      }
+      .envelope-pocket-bottom {
+        border-width: 0 140px 105px 140px;
+      }
+      .envelope-top-flap {
+        border-width: 100px 140px 0 140px;
+      }
+      .envelope-seal {
+        top: 72px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.15rem;
+      }
+      .envelope-tag {
+        font-size: 1.5rem;
+        padding: 6px 20px;
+        margin-bottom: 12px;
+      }
+      .flowers {
+        transform: scale(0.72);
+        bottom: 4vmin;
+      }
+      .message {
+        bottom: 24px;
+        font-size: 1.15rem;
+        padding: 10px 20px;
+        width: 90%;
+        max-width: 340px;
+      }
+      .back-btn {
+        top: 18px;
+        left: 18px;
+        padding: 8px 18px;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-height: 700px) {
+      .flowers {
+        transform: scale(0.65);
+        bottom: 2vmin;
+      }
+      .message {
+        bottom: 18px;
+        font-size: 1.05rem;
+        padding: 8px 16px;
+      }
+    }
+
   </style>
 </head>
 <body>
